@@ -1,7 +1,6 @@
 # Create your models here.
 from django.db import models
 import datetime as dt
-
 class Picture(models.Model):
     title = models.CharField(max_length =30)
     image = models.ImageField(upload_to = 'images/', default="")
@@ -33,6 +32,11 @@ class Picture(models.Model):
         '''
         result = cls.objects.filter(location__location__icontains=search_term)
         return result
+                                
+
+
+
+
 
 class Category(models.Model):
     category = models.CharField(max_length =30)
